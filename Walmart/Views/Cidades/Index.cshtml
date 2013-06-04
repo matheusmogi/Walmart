@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Walmart.Model.Cidade>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section JavaScript{
+    <script src="/Scripts/bootbox/bootbox3.2.0.js" type="text/javascript"></script>
+    <script src="/Scripts/bootbox/bootstrap.min.js" type="text/javascript"></script>
+    <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript">
+        function Delete(id) {
+            bootbox.confirm("Você deseja mesmo deletar este registro ?", function(result){
+            if(result){
+                $.ajax({
+                    url:"@Url.Action("Delete", "Cidades")",
+                    data: {codigo:id},
+                    type:"POST",
+                    datatype:"json",
+                    error:function(data){                            
+                                bootbox.alert("Desculpe, ocorreu um erro. Tente novamente mais tarde.");
+                            },
+                    success:function(data){
+                            window.location.href="@Url.Action("Index", "Cidades")";
+                            }                        
+
+                    });
+                }
+            });
+        }
+    </script>
+}
+<h2>
+    Cidades</h2>
+<p>
+    @Html.ActionLink("Criar Nova Cidade", "Novo")
+</p>
+<table class="pure-table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Capital
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+        </th>
+    </tr>
+    @{var odd = true;}
+    @foreach (var item in Model)
+    {
+        <tr class="@(odd ? "pure-table-odd" : "even")">
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @(item.Capital ? "Sim" : "Não")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { codigo = item.Codigo }) | <a href="javascript:Delete(@item.Codigo)">
+                    Delete </a>| @Html.ActionLink("Detalhes", "Detalhes", new { codigo = item.Codigo })
+            </td>
+        </tr>
+        odd = !odd;
+    }
+</table>

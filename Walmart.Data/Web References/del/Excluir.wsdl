@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Delete">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn" />
+  <wsdl:message name="DeleteHttpGetOut" />
+  <wsdl:message name="DeleteHttpPostIn" />
+  <wsdl:message name="DeleteHttpPostOut" />
+  <wsdl:portType name="ExcluirSoap">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ExcluirHttpGet">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ExcluirHttpPost">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExcluirSoap" type="tns:ExcluirSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExcluirSoap12" type="tns:ExcluirSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExcluirHttpGet" type="tns:ExcluirHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExcluirHttpPost" type="tns:ExcluirHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Excluir">
+    <wsdl:port name="ExcluirSoap" binding="tns:ExcluirSoap">
+      <soap:address location="http://localhost:1000/Excluir.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExcluirSoap12" binding="tns:ExcluirSoap12">
+      <soap12:address location="http://localhost:1000/Excluir.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExcluirHttpGet" binding="tns:ExcluirHttpGet">
+      <http:address location="http://localhost:1000/Excluir.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExcluirHttpPost" binding="tns:ExcluirHttpPost">
+      <http:address location="http://localhost:1000/Excluir.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Walmart.Data.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Walmart_Data_add_Adicionar" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1000/cidades/add</Value>
+    </Setting>
+    <Setting Name="Walmart_Data_upd_Atualizar" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1000/Atualizar.asmx</Value>
+    </Setting>
+    <Setting Name="Walmart_Data_del_Excluir" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1000/Excluir.asmx</Value>
+    </Setting>
+    <Setting Name="Walmart_Data_sel_Selecionar" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1000/Selecionar.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

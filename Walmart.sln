@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walmart", "Walmart\Walmart.csproj", "{A522261C-5B5E-46D3-80BE-45F62D3813D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walmart.Model", "Walmart.Model\Walmart.Model.csproj", "{16C941D9-2EF5-4565-99FF-5553BF6760E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walmart.Data", "Walmart.Data\Walmart.Data.csproj", "{D676ED7C-DF03-44C0-B979-CA3463342527}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B1C8B146-E007-4CA4-AF60-E46302193B51} = {B1C8B146-E007-4CA4-AF60-E46302193B51}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walmart.Service", "Walmart.Service\Walmart.Service.csproj", "{B1C8B146-E007-4CA4-AF60-E46302193B51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A522261C-5B5E-46D3-80BE-45F62D3813D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A522261C-5B5E-46D3-80BE-45F62D3813D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A522261C-5B5E-46D3-80BE-45F62D3813D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A522261C-5B5E-46D3-80BE-45F62D3813D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C941D9-2EF5-4565-99FF-5553BF6760E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C941D9-2EF5-4565-99FF-5553BF6760E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C941D9-2EF5-4565-99FF-5553BF6760E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C941D9-2EF5-4565-99FF-5553BF6760E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D676ED7C-DF03-44C0-B979-CA3463342527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D676ED7C-DF03-44C0-B979-CA3463342527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D676ED7C-DF03-44C0-B979-CA3463342527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D676ED7C-DF03-44C0-B979-CA3463342527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C8B146-E007-4CA4-AF60-E46302193B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C8B146-E007-4CA4-AF60-E46302193B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C8B146-E007-4CA4-AF60-E46302193B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C8B146-E007-4CA4-AF60-E46302193B51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

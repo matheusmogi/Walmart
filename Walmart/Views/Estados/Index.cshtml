@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Walmart.Model.Estado>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section JavaScript{
+    <script src="/Scripts/bootbox/bootbox3.2.0.js" type="text/javascript"></script>
+    <script src="/Scripts/bootbox/bootstrap.min.js" type="text/javascript"></script>
+    <link href="/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript">
+        function Delete(id) {
+            bootbox.confirm("Você deseja mesmo deletar este registro ?", function(result){
+            if(result){
+                $.ajax({
+                    url:"@Url.Action("Delete", "Estados")",
+                    data: {codigo:id},
+                    type:"POST",
+                    datatype:"json",
+                    error:function(data){
+                            if(data.responseText.indexOf("CIDADE")!==-1)
+                                bootbox.alert("Existem cidade(s) relacionadas a este Estado. Delete esta(s) Cidade(s) antes de deletar o Estado.");
+                            else
+                                bootbox.alert("Desculpe, ocorreu um erro. Tente novamente mais tarde.");
+                            },
+                    success:function(data){
+                            window.location.href="@Url.Action("Index", "Estados")";
+                            }                        
+
+                    });
+                }
+            });
+        }
+    </script>
+}
+<h2>
+    Estados</h2>
+<p>
+    @Html.ActionLink("Criar Novo Estado", "Novo")
+</p>
+<table class="pure-table">
+    <tr>
+        <th>
+            País
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            Sigla
+        </th>
+        <th>
+            Região
+        </th>
+        <th>
+        </th>
+    </tr>
+    @{var odd = true;}
+    @foreach (var item in Model)
+    {
+        <tr class="@(odd ? "pure-table-odd" : "even")">
+            <td>
+                @Html.DisplayFor(modelItem => item.Pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sigla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Regiao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { codigo = item.Codigo }) | <a href="javascript:Delete(@item.Codigo)">
+                    Delete </a>
+            </td>
+        </tr>
+        odd = !odd;
+    }
+</table>

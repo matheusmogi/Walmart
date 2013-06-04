@@ -1,0 +1,11 @@
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\Walmart.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\Walmart.pdb
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\EntityFramework.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\EntityFramework.xml
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\obj\Debug\Walmart.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\obj\Debug\Walmart.pdb
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\Walmart.Data.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\Walmart.Model.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\Walmart.Data.pdb
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart\bin\Walmart.Model.pdb

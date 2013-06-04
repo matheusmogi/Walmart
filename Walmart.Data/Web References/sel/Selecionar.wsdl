@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Select">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectResult" type="tns:Cidade" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cidade">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="tns:Estado" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capital" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Estado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Regiao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Cidade" nillable="true" type="tns:Cidade" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Select" />
+  </wsdl:message>
+  <wsdl:message name="SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectHttpGetIn" />
+  <wsdl:message name="SelectHttpGetOut">
+    <wsdl:part name="Body" element="tns:Cidade" />
+  </wsdl:message>
+  <wsdl:message name="SelectHttpPostIn" />
+  <wsdl:message name="SelectHttpPostOut">
+    <wsdl:part name="Body" element="tns:Cidade" />
+  </wsdl:message>
+  <wsdl:portType name="SelecionarSoap">
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectSoapIn" />
+      <wsdl:output message="tns:SelectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SelecionarHttpGet">
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectHttpGetIn" />
+      <wsdl:output message="tns:SelectHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SelecionarHttpPost">
+    <wsdl:operation name="Select">
+      <wsdl:input message="tns:SelectHttpPostIn" />
+      <wsdl:output message="tns:SelectHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SelecionarSoap" type="tns:SelecionarSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SelecionarSoap12" type="tns:SelecionarSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Select">
+      <soap12:operation soapAction="http://tempuri.org/Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SelecionarHttpGet" type="tns:SelecionarHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Select">
+      <http:operation location="/Select" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SelecionarHttpPost" type="tns:SelecionarHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Select">
+      <http:operation location="/Select" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Selecionar">
+    <wsdl:port name="SelecionarSoap" binding="tns:SelecionarSoap">
+      <soap:address location="http://localhost:1000/Selecionar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SelecionarSoap12" binding="tns:SelecionarSoap12">
+      <soap12:address location="http://localhost:1000/Selecionar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SelecionarHttpGet" binding="tns:SelecionarHttpGet">
+      <http:address location="http://localhost:1000/Selecionar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SelecionarHttpPost" binding="tns:SelecionarHttpPost">
+      <http:address location="http://localhost:1000/Selecionar.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,25 @@
+﻿@model Walmart.Model.Cidade
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Detalhes</h2>
+    <div class="pure-form pure-form-stacked pure-skin-mine">
+<fieldset>
+    <legend>Cidade</legend>
+    <div class="display-label">
+        Nome: @Html.DisplayFor(model => model.Nome)
+    </div>
+    <div class="display-label">
+        Capital: @(Model.Capital ? "Sim" : "Não")
+    </div>
+    <div class="display-label">
+        Estado: @Html.DisplayFor(model => model.Estado.Nome) / @Html.DisplayFor(model => model.Estado.Sigla) / @Html.DisplayFor(model => model.Estado.Regiao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { codigo=Model.Codigo }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
+</div>

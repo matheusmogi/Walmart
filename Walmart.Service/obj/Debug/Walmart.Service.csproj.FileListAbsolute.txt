@@ -1,0 +1,7 @@
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\bin\Walmart.Service.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\bin\Walmart.Service.pdb
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\bin\Walmart.Model.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\bin\Walmart.Model.pdb
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\obj\Debug\Walmart.Service.dll
+C:\Users\mreis\Documents\Visual Studio 2010\Projects\Walmart\Walmart.Service\obj\Debug\Walmart.Service.pdb
